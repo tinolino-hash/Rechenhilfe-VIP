@@ -1,7 +1,7 @@
 {
   "name": "Rechenhilfe VIP",
   "short_name": "Rechenhilfe",
-  "start_url": "/",
+  "start_url": "/Rechenhilfe-VIP/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",

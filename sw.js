@@ -1,6 +1,6 @@
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open("kasse-cache").then((cache) => {
+    caches.open("rechenhilfe-cache").then((cache) => {
       return cache.addAll([
         "/Rechenhilfe-VIP/",
         "/Rechenhilfe-VIP/index.html",

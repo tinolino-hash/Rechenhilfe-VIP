@@ -2,11 +2,11 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("rechenhilfe-cache").then((cache) => {
       return cache.addAll([
-        "/Rechenhilfe-VIP/",
-        "/Rechenhilfe-VIP/index.html",
-        "/Rechenhilfe-VIP/manifest.json",
-        "/Rechenhilfe-VIP/admin/",
-        "/Rechenhilfe-VIP/admin/index.html"
+        "./",
+        "./index.html",
+        "./manifest.json",
+        "./admin/",
+        "./admin/index.html"
       ]);
     })
   );

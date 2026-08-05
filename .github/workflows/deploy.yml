@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [chore/build-fix]
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -12,7 +13,7 @@ permissions:
 
 # Laufende Deployments nicht abbrechen, neue in die Warteschlange stellen
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -31,13 +32,19 @@ jobs:
       - run: npm run build
 
       - uses: actions/configure-pages@v5
+        if: github.ref_name == 'main'
 
       - uses: actions/upload-pages-artifact@v3
+        if: github.ref_name == 'main'
         with:
           path: dist
 
+  # Deployt wird nur von Branches, die in der github-pages-Environment
+  # als Deployment-Branch freigegeben sind. Auf allen anderen Branches und
+  # in PRs laeuft nur der Build als Validierung.
   deploy:
     needs: build
+    if: github.ref_name == 'main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

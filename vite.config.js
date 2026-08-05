@@ -26,15 +26,10 @@ export default defineConfig({
     }
   },
 
-  // Build-Einstellungen für GitHub Pages
+  // Build-Einstellungen: der GitHub-Actions-Workflow deployt dist/ nach Pages
   build: {
-    outDir: 'docs',        // <— WICHTIG: statt dist
+    outDir: 'dist',
     emptyOutDir: true
-  },
-
-  // Preview soll denselben Ordner nutzen
-  preview: {
-    outDir: 'docs'         // <— verhindert den dist-Fehler
   },
 
   publicDir: 'public'

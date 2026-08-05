@@ -1,0 +1,17 @@
+.full-width {
+  position: relative;
+  width: 94vw;
+  left: 0;
+  margin-left: calc(-48.5vw + 50%);
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .full-width {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+  }
+}

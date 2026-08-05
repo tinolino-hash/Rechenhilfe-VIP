@@ -89,7 +89,7 @@ export default [
             artikelnummer: 3001,
             name: "Erdbeerinha",
             preis: 8.00,
-            kategorie: "Cocktail"
+            kategorie: "Cocktails"
         },
         {
             id: 32,
